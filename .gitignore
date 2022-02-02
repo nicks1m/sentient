@@ -4,6 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
+/src/flask-server/venv/
+/src/flask-server/arca.npy
 
 # testing
 /coverage
