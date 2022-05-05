@@ -1,3 +1,3 @@
-An attempt to sonify data using OpenWeatherAPI, Tone.js, Flask and React.
+An attempt to sonify weather data using OpenWeatherAPI, Tone.js, Flask and React.
 
-Some of the code for spectrogram generation is adapted and modified from MelSpecVAE.
+Some of the Python code for spectrogram generation is adapted and modified from MelSpecVAE.
