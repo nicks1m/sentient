@@ -6,6 +6,8 @@
 .pnp.js
 /src/flask-server/venv/
 /src/flask-server/arca.npy
+/src/flask-server/reconstructions_0.wav
+/src/flask-server/timhecker.npy
 
 # testing
 /coverage

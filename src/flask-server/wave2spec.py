@@ -247,7 +247,7 @@ def select_spec(spec, labels, num_spec=10):
 
 #---------------NOISE GENERATOR FUNCTIONS ------------#
 
-def generate_random_z_vect(seed=523231,size_z=10,scale=1.0):
+def generate_random_z_vect(seed=523231,size_z=1,scale=1.0):
     VECTOR_DIM = 256
     np.random.seed(seed)
     x = np.random.uniform(low=(scale * -1.0), high=scale, size=(size_z,VECTOR_DIM))
@@ -350,6 +350,8 @@ def towave_from_z(spec, name, path='./', show=False, save=True):
 
 def interpolate_points(p1, p2,scale, n_steps=10):
 	# interpolate ratios between the points
+    #Return evenly spaced numbers over a specified interval.
+    #Returns num evenly spaced samples, calculated over the interval [start, stop]
 	ratios = linspace(-scale, scale, num=n_steps)
 	# linear interpolate vectors
 	vectors = list()

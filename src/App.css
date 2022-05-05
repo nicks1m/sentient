@@ -29,8 +29,33 @@
 }
 
 div {
-  margin-bottom: 5vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  padding:15px 15px;
+  text-align: center;
+  margin: auto;
+
 }
+
+form {
+  margin:5vh;
+}
+
+.audio_controls{
+  display: block;
+  margin: auto;
+
+}
+
+.channel{
+  display: block;
+  padding: 20px;
+  margin: 10px auto;
+  width: 80vh;
+  height: inherit;
+  border: 1px outset black;
+}
+
 
 #p5sketch{
   min-height: 50vh;

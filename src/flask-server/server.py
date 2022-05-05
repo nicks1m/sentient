@@ -21,7 +21,7 @@ set_session(sess)
 vae = VAE.load("model")
 vae.summary()
 
-with open('./arca.npy', 'rb') as f:
+with open('./timhecker.npy', 'rb') as f:
     data_to_train = np.load(f)
     print("data ready")
 
@@ -30,9 +30,6 @@ with open('./arca.npy', 'rb') as f:
 def fetch_audio():
     return send_from_directory("./",
                                "interp.wav", as_attachment=True)
-@app.route("/members",methods = ['POST', 'GET'])
-def members():
-    return {"members": ["Test", "Test", "Test"]}
 
 
 @app.route("/generatefromz")
@@ -41,7 +38,9 @@ def generatez():
     global sess
     # z = vae.generate_random_point_latent_space()
     # sampled_point = np.array(vae.sample_from_latent_space(z))
-    z_vect = generate_random_z_vect()
+    scale_z_vectors = 1.5;
+    seed = np.random.rand() * 10000;
+    z_vect = generate_random_z_vect(int(seed),1,scale_z_vectors)
     with graph.as_default():
         set_session(sess)
         z_sample = np.array(vae.sample_from_latent_space(z_vect))
@@ -87,7 +86,7 @@ def interpolate():
     if request.method == 'POST':
         data = request.json
         print(data)
-        scale_interpolation_ratio =  10
+        scale_interpolation_ratio =  4
         num_interpolation_steps =   8
         scale_z_vectors =  1.5
         global graph
